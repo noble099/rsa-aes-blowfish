@@ -32,8 +32,8 @@ public class Main {
      /**
    * Test the EncryptionUtil
    */
-  public static final String PRIVATE_KEY_FILE = "/Users/megasap/Documents/private.key";
-  public static final String PUBLIC_KEY_FILE = "/Users/megasap/Documents/public.key";
+  public static final String PRIVATE_KEY_FILE = "keys/private.key";
+  public static final String PUBLIC_KEY_FILE = "keys/public.key";
 
   public static void main(String[] args) {
 
