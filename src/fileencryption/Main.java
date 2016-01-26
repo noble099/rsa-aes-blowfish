@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.Scanner;
 
 import static fileencryption.RSA.*;
 
@@ -33,58 +34,114 @@ public class Main {
 
   public static void main(String[] args) {
 
-      String FILE_DIR = "file/example.txt";
-      String ENCRYPTION_OUTPUT_DIR = "file/output";
-      String DECRYPTION_OUTPUT_DIR = "file/output2";
+      while(true){
+          System.out.println("Choose 3 type of encryption below:\n");
+          System.out.println("(1) RSA , (2) AES , (3) Blowfish");
+          Scanner input = new Scanner(System.in);
+          String encType = input.nextLine();
 
-     byte[] fileByte = getFileByte(FILE_DIR);
+          char type = encType.charAt(0);
 
-      System.out.println("Original:" + fileByte.toString());
-
-//
-//      //example of RSA
-    try {
-
-      // Check if the pair of keys are present else generate those.
-      if (!areKeysPresent(PRIVATE_KEY_FILE, PUBLIC_KEY_FILE)) {
-        // Method generates a pair of keys using the RSA algorithm and stores it
-        // in their respective files
-        generateKey(PRIVATE_KEY_FILE, PUBLIC_KEY_FILE);
+          switch (type){
+              case '1':
+                  RSAEncryption();
+                  break;
+              case '2':
+                  System.out.println("Not implemented yet");
+//              AESEncryption();
+                  break;
+              case '3':
+                  System.out.println("Not implemented yet");
+//              BFEncryption();
+                  break;
+              default:
+                  break;
+          }
       }
 
 
-        //ENCRYPTION
-      byte[] encryptedFile = encryptRSA(fileByte,PUBLIC_KEY_FILE);
-        System.out.println("Encrypted: " + encryptedFile.toString());
-        FileOutputStream fos = new FileOutputStream(ENCRYPTION_OUTPUT_DIR);
-        fos.write(encryptedFile);
-        fos.close();
-
-
-        //DECRYPTION
-        byte[] decryptedFile = decryptRSA(encryptedFile,PRIVATE_KEY_FILE);
-        System.out.println("Decrypted: " + decryptedFile.toString());
-        FileOutputStream fos1 = new FileOutputStream(DECRYPTION_OUTPUT_DIR);
-        fos1.write(decryptedFile);
-        fos1.close();
-
-//      decryptRSA(encryptedFile,PRIVATE_KEY_FILE);
 
 
 
-
-
-
-
-
-      // Printing the Original, Encrypted and Decrypted Text
-
-
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
   }
+
+    public static void RSAEncryption(){
+        String pubkeydir = "";
+        String privkeydir = "";
+        String FILE_DIR = "file/example.txt";
+        String OUTPUT_DIR = "";
+        System.out.println("Choose (1)encryption or (2)decryption");
+        Scanner input = new Scanner(System.in);
+        String procedure = input.nextLine();
+        char proc = procedure.charAt(0);
+
+
+//            // Check if the pair of keys are present else generate those.
+//            if (!areKeysPresent(PRIVATE_KEY_FILE, PUBLIC_KEY_FILE)) {
+//                // Method generates a pair of keys using the RSA algorithm and stores it
+//                // in their respective files
+//                generateKey(PRIVATE_KEY_FILE, PUBLIC_KEY_FILE);
+//            }
+
+
+        switch(proc){
+            case  '1':
+                System.out.println("Enter directory to ORIGINAL file");
+                FILE_DIR = input.nextLine();
+                System.out.println("Enter directory to PUBLIC key");
+                pubkeydir = input.nextLine();
+                System.out.println("Enter directory to OUTPUT file");
+                OUTPUT_DIR = input.nextLine();
+            try {
+                //ENCRYPTION
+                byte[] fileByte = getFileByte(FILE_DIR);
+                System.out.println("Original:" + fileByte.toString());
+                byte[] encryptedFile = encryptRSA(fileByte,pubkeydir);
+                System.out.println("Encrypted: " + encryptedFile.toString());
+                FileOutputStream fos = new FileOutputStream(OUTPUT_DIR);
+                fos.write(encryptedFile);
+                fos.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+                break;
+            case   '2':
+                try{
+                    System.out.println("Enter directory to ENCRYPTED file");
+                    FILE_DIR = input.nextLine();
+                    System.out.println("Enter directory to PRIVATE key");
+                    privkeydir = input.nextLine();
+                    System.out.println("Enter directory to OUTPUT file");
+                    OUTPUT_DIR = input.nextLine();
+                    byte[] fileByte1 = getFileByte(FILE_DIR);
+                    byte[] decryptedFile = decryptRSA(fileByte1,privkeydir);
+                    System.out.println("Decrypted: " + decryptedFile.toString());
+                    FileOutputStream fos1 = new FileOutputStream(OUTPUT_DIR);
+                    fos1.write(decryptedFile);
+                    fos1.close();
+                }catch(Exception e){
+
+                }
+                break;
+
+        }
+
+
+
+
+        try {
+
+
+
+
+
+            //DECRYPTION
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
 
     public static byte[] getFileByte(String filePath){
