@@ -107,14 +107,14 @@ public class RSA {
    * @return Encrypted text
    * @throws java.lang.Exception
    */
-  public static byte[] encrypt(String text, PublicKey key) {
+  public static byte[] encrypt(byte[] originalByte, PublicKey key) {
     byte[] cipherText = null;
     try {
       // get an RSA cipher object and print the provider
       final Cipher cipher = Cipher.getInstance(ALGORITHM);
       // encrypt the plain text using the public key
       cipher.init(Cipher.ENCRYPT_MODE, key);
-      cipherText = cipher.doFinal(text.getBytes());
+      cipherText = cipher.doFinal(originalByte);
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -131,7 +131,7 @@ public class RSA {
    * @return plain text
    * @throws java.lang.Exception
    */
-  public static String decrypt(byte[] text, PrivateKey key) {
+  public static byte[] decrypt(byte[] text, PrivateKey key) {
     byte[] dectyptedText = null;
     try {
       // get an RSA cipher object and print the provider
@@ -145,7 +145,7 @@ public class RSA {
       ex.printStackTrace();
     }
 
-    return new String(dectyptedText);
+    return dectyptedText;// new String(dectyptedText);
   }
 
 

@@ -6,19 +6,15 @@
 package fileencryption;
 
 
-import static fileencryption.RSA.areKeysPresent;
-import static fileencryption.RSA.decrypt;
-import static fileencryption.RSA.encrypt;
-import static fileencryption.RSA.generateKey;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import static fileencryption.RSA.*;
+
 
 /**
  *
@@ -37,6 +33,16 @@ public class Main {
 
   public static void main(String[] args) {
 
+      String FILE_DIR = "file/example.txt";
+      String ENCRYPTION_OUTPUT_DIR = "file/output";
+      String DECRYPTION_OUTPUT_DIR = "file/output2";
+
+     byte[] fileByte = getFileByte(FILE_DIR);
+
+      System.out.println("Original:" + fileByte.toString());
+
+//
+//      //example of RSA
     try {
 
       // Check if the pair of keys are present else generate those.
@@ -46,52 +52,84 @@ public class Main {
         generateKey(PRIVATE_KEY_FILE, PUBLIC_KEY_FILE);
       }
 
-      final String originalText = "Text to be encrypted ";
-      
-      byte[] encryptedFile = encryptRSA(originalText,PUBLIC_KEY_FILE);      
-      decryptRSA(encryptedFile,PRIVATE_KEY_FILE);
 
-     
+        //ENCRYPTION
+      byte[] encryptedFile = encryptRSA(fileByte,PUBLIC_KEY_FILE);
+        System.out.println("Encrypted: " + encryptedFile.toString());
+        FileOutputStream fos = new FileOutputStream(ENCRYPTION_OUTPUT_DIR);
+        fos.write(encryptedFile);
+        fos.close();
 
-      
+
+        //DECRYPTION
+        byte[] decryptedFile = decryptRSA(encryptedFile,PRIVATE_KEY_FILE);
+        System.out.println("Decrypted: " + decryptedFile.toString());
+        FileOutputStream fos1 = new FileOutputStream(DECRYPTION_OUTPUT_DIR);
+        fos1.write(decryptedFile);
+        fos1.close();
+
+//      decryptRSA(encryptedFile,PRIVATE_KEY_FILE);
+
+
+
+
+
+
+
 
       // Printing the Original, Encrypted and Decrypted Text
-      
-      
+
+
 
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
     
-  
-  public static byte[] encryptRSA(String plainText, String publicKeyDir){
+
+    public static byte[] getFileByte(String filePath){
+        byte[] fileByte = null;
+        Path path = Paths.get(filePath);
+        try {
+            fileByte = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileByte;
+    }
+
+
+  public static byte[] encryptRSA(byte[] originalFileByte, String publicKeyDir){
       ObjectInputStream inputStream = null;
-      byte[] encryptedText = null;
+      byte[] encryptedByte = null;
       try {
           // Encrypt the string using the public key
           inputStream = new ObjectInputStream(new FileInputStream(PUBLIC_KEY_FILE));
           final PublicKey publicKey = (PublicKey) inputStream.readObject();
-          final byte[] cipherText = encrypt(plainText, publicKey);
-          System.out.println("Encrypted: " +cipherText.toString());
-          encryptedText = cipherText;
+          final byte[] cipherByte = encrypt(originalFileByte, publicKey);
+          //System.out.println("Encrypted: " +cipherText.toString());
+          encryptedByte = cipherByte;
       } catch (Exception e) {
           e.printStackTrace();
       } 
-      return encryptedText;
+      return encryptedByte;
   }
   
-  public static void decryptRSA(byte[] cipherText, String privateKeyDir){
+  public static byte[] decryptRSA(byte[] cipherByte, String privateKeyDir){
       ObjectInputStream inputStream = null;
+      byte[] decryptedByte = null;
       try {
           // Decrypt the cipher text using the private key.
           inputStream = new ObjectInputStream(new FileInputStream(privateKeyDir));
           final PrivateKey privateKey = (PrivateKey) inputStream.readObject();
-          final String plainText = decrypt(cipherText, privateKey);
-          System.out.println("Decrypted: " + plainText);
+          final byte[] decipherbyte = decrypt(cipherByte, privateKey);
+          decryptedByte = decipherbyte;
+          //System.out.println("Decrypted: " + plainText);
       } catch (Exception e) {
           e.printStackTrace();
       }
+
+      return decryptedByte;
       
   }
 }
