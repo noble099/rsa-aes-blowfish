@@ -1,23 +1,9 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author megasap
- */
-
 package fileencryption;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -30,20 +16,8 @@ import javax.crypto.Cipher;
 
 public class RSA {
 
-  /**
-   * String to hold name of the encryption algorithm.
-   */
   public static final String ALGORITHM = "RSA";
 
-
-  /**
-   * Generate key which contains a pair of private and public key using 1024
-   * bytes. Store the set of keys in Prvate.key and Public.key files.
-   * 
-   * @throws NoSuchAlgorithmException
-   * @throws IOException
-   * @throws FileNotFoundException
-   */
   public static void generateKey(String privateKeyDir, String publicKeyDir) {
     try {
       final KeyPairGenerator keyGen = KeyPairGenerator.getInstance(ALGORITHM);
@@ -81,11 +55,6 @@ public class RSA {
 
   }
 
-  /**
-   * The method checks if the pair of public and private key has been generated.
-   * 
-   * @return flag indicating if the pair of keys were generated.
-   */
   public static boolean areKeysPresent(String privateKeyDir, String publicKeyDir) {
 
     File privateKey = new File(privateKeyDir);
@@ -97,16 +66,6 @@ public class RSA {
     return false;
   }
 
-  /**
-   * Encrypt the plain text using public key.
-   * 
-   * @param text
-   *          : original plain text
-   * @param key
-   *          :The public key
-   * @return Encrypted text
-   * @throws java.lang.Exception
-   */
   public static byte[] encrypt(byte[] originalByte, PublicKey key) {
     byte[] cipherText = null;
     try {
@@ -121,16 +80,7 @@ public class RSA {
     return cipherText;
   }
 
-  /**
-   * Decrypt text using private key.
-   * 
-   * @param text
-   *          :encrypted text
-   * @param key
-   *          :The private key
-   * @return plain text
-   * @throws java.lang.Exception
-   */
+
   public static byte[] decrypt(byte[] text, PrivateKey key) {
     byte[] dectyptedText = null;
     try {

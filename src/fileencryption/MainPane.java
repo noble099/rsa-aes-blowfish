@@ -13,7 +13,6 @@ public class MainPane extends JPanel {
     public MainPane() {
         super(new GridLayout(1, 1));
 
-        ImageIcon icon = createImageIcon("images/middle.gif");
         JTabbedPane tabbedPane = new JTabbedPane();
         JTextField textField;
         JTextField textField1;
@@ -23,8 +22,8 @@ public class MainPane extends JPanel {
 
         //RSA Panel
         JComponent panel1 = makeTextPanel("RSA Encryption");
-        tabbedPane.addTab("RSA", icon, panel1,
-                "Does nothing");
+        tabbedPane.addTab("RSA", panel1);
+
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
         textField = new JTextField("Input file path");
@@ -89,16 +88,14 @@ public class MainPane extends JPanel {
 
         //AES Panel
         JComponent panel2 = makeTextPanel("AES Encryption");
-        tabbedPane.addTab("AES", icon, panel2,
-                "Does twice as much nothing");
+        tabbedPane.addTab("AES", panel2);
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
 
         //Blowfish Panel
         JComponent panel3 = makeTextPanel("Blowfish Encryption");
 //        panel3.setPreferredSize(new Dimension(410, 410));
-        tabbedPane.addTab("Blowfish", icon, panel3,
-                "Still does nothing");
+        tabbedPane.addTab("Blowfish", panel3);
         tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
         //Add the tabbed pane to this panel.
         add(tabbedPane);
@@ -117,16 +114,6 @@ public class MainPane extends JPanel {
         return panel;
     }
 
-    /** Returns an ImageIcon, or null if the path was invalid. */
-    protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = MainPane.class.getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL);
-        } else {
-            System.err.println("Couldn't find file: " + path);
-            return null;
-        }
-    }
 
     /**
      * Create the GUI and show it.  For thread safety,
