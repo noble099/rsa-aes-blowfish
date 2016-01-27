@@ -10,15 +10,15 @@ public class MainPane extends JPanel {
 
     private static JFrame frame;
     MainRSAActivity rsaActivity = new MainRSAActivity();
-//    FlowLayout flowLayout = new FlowLayout();
     public MainPane() {
         super(new GridLayout(1, 1));
-//        final boolean pubkey = false;
-//        final boolean privkey = false;
-//        final boolean inputfile = false;
-//        boolean outputfile = false;
-        JTabbedPane tabbedPane = new JTabbedPane();
+
         ImageIcon icon = createImageIcon("images/middle.gif");
+        JTabbedPane tabbedPane = new JTabbedPane();
+        JTextField textField;
+        JTextField textField1;
+        JTextField textField2;
+        JTextField textField3;
 
 
         //RSA Panel
@@ -27,133 +27,23 @@ public class MainPane extends JPanel {
                 "Does nothing");
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
-        JLabel inputLabel = new JLabel("");
-        JLabel outputLabel = new JLabel("");
-        JLabel pubkeyLabel = new JLabel("");
-        JLabel privkeyLabel = new JLabel("");
+        textField = new JTextField("Input file path");
+        textField1 = new JTextField("Output file path");
+        textField2 = new JTextField("Public key path");
+        textField3 = new JTextField("Private key path");
 
 
-        //BROWSE INPUT FILE
-        final JFileChooser inputFileDialog = new JFileChooser();
-        JButton browseInputButton = new JButton("Browse Input File Directory");
-        browseInputButton.setPreferredSize(new Dimension(20,20));
-        browseInputButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int returnVal = inputFileDialog.showOpenDialog(frame);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    java.io.File file = inputFileDialog.getSelectedFile();
-                    System.out.println(file.getPath());
 
-                    inputLabel.setText("Input File Directory :"
-                            + file.getPath());
-                    rsaActivity.setInputdir(file.getPath());
-//                    outputfile = true;
-                }
-                else{
-                    System.out.println("Cancel");
-                    inputLabel.setText("Open command cancelled by user." );
-                }
-            }
-        });
 
-        //BROWSE OUTPUT FILE
-        final JFileChooser outputFileDialog = new JFileChooser();
-//        outputFileDialog.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        JButton browseOutputButton = new JButton("Browse Output File Directory");
-        browseOutputButton.setPreferredSize(new Dimension(20,20));
-        browseOutputButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int returnVal = outputFileDialog.showOpenDialog(frame);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    java.io.File file = outputFileDialog.getSelectedFile();
-                    System.out.println(file.getPath());
-
-                    outputLabel.setText("Output File Directory :"
-                            + file.getPath());
-                    rsaActivity.setOutputdir(file.getPath());
-                }
-                else{
-                    System.out.println("Cancel");
-                    outputLabel.setText("Open command cancelled by user." );
-                }
-            }
-        });
-
-        //BROWSE PUBKEY FILE
-        final JFileChooser pubkeyDialog = new JFileChooser();
-        JButton browsepubkeyButton = new JButton("Browse Public key Directory");
-        browsepubkeyButton.setPreferredSize(new Dimension(20,20));
-        browsepubkeyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int returnVal = pubkeyDialog.showOpenDialog(frame);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    java.io.File file = pubkeyDialog.getSelectedFile();
-                    System.out.println(file.getPath());
-
-                    pubkeyLabel.setText("Public key Directory :"
-                            + file.getPath());
-                    rsaActivity.setPubkeydir(file.getPath());
-                }
-                else{
-                    System.out.println("Cancel");
-                    pubkeyLabel.setText("Open command cancelled by user." );
-                }
-            }
-        });
-
-        //BROWSE Private FILE
-        final JFileChooser privateDialog = new JFileChooser();
-        JButton browseprivkeyButton = new JButton("Browse Private key Directory");
-        browseprivkeyButton.setPreferredSize(new Dimension(20,20));
-        browseprivkeyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int returnVal = privateDialog.showOpenDialog(frame);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    java.io.File file = privateDialog.getSelectedFile();
-                    System.out.println(file.getPath());
-
-                    privkeyLabel.setText("Private key Directory :"
-                            + file.getPath());
-                    rsaActivity.setPrivkeydir(file.getPath());
-                }
-                else{
-                    System.out.println("Cancel");
-                    privkeyLabel.setText("Open command cancelled by user." );
-                }
-            }
-        });
-
-        final JFileChooser newKeyDialog = new JFileChooser();
-        JButton browseNewKeyButton = new JButton("Browse new key Directory");
-        browseNewKeyButton.setPreferredSize(new Dimension(20,20));
-        browseNewKeyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int returnVal = newKeyDialog.showOpenDialog(frame);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    java.io.File file = newKeyDialog.getSelectedFile();
-                    System.out.println(file.getPath());
-
-                    privkeyLabel.setText("New Key Directory :"
-                            + file.getPath());
-                    rsaActivity.setPrivkeydir(file.getPath());
-                }
-                else{
-                    System.out.println("Cancel");
-                    privkeyLabel.setText("Open command cancelled by user." );
-                }
-            }
-        });
 
         JButton rsaEncryptButton = new JButton("Encrypt");
 
         rsaEncryptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                rsaActivity.setInputdir(textField.getText());
+                rsaActivity.setOutputdir(textField1.getText());
+                rsaActivity.setPubkeydir(textField2.getText());
                 rsaActivity.doEncryptRSA();
             }
         });
@@ -164,25 +54,28 @@ public class MainPane extends JPanel {
         rsaDecryptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                rsaActivity.setInputdir(textField.getText());
+                rsaActivity.setOutputdir(textField1.getText());
+                rsaActivity.setPrivkeydir(textField3.getText());
                 rsaActivity.doDecryptRSA();
             }
         });
+
+
         JButton rsaGenerateKeyButton = new JButton("Generate new key");
         rsaGenerateKeyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                rsaActivity.setPubkeydir(textField2.getText());
+                rsaActivity.setPrivkeydir(textField3.getText());
                 rsaActivity.doGenerateKey();
             }
         });
 
-        panel1.add(browseInputButton);
-        panel1.add(inputLabel);
-        panel1.add(browseOutputButton);
-        panel1.add(outputLabel);
-        panel1.add(browsepubkeyButton);
-        panel1.add(pubkeyLabel);
-        panel1.add(browseprivkeyButton);
-        panel1.add(privkeyLabel);
+        panel1.add(textField);
+        panel1.add(textField1);
+        panel1.add(textField2);
+        panel1.add(textField3);
         panel1.add(rsaEncryptButton);
         panel1.add(rsaDecryptButton);
         panel1.add(rsaGenerateKeyButton);
@@ -209,12 +102,6 @@ public class MainPane extends JPanel {
         tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
         //Add the tabbed pane to this panel.
         add(tabbedPane);
-
-
-
-
-
-
 
         //The following line enables to use scrolling tabs.
         tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
