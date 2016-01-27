@@ -1,0 +1,30 @@
+Choose 3 type of encryption below:
+
+(1) RSA , (2) AES , (3) Blowfish
+1
+Choose (1)encryption or (2)decryption
+1
+Enter directory to ORIGINAL file
+file/example.txt
+Enter directory to PUBLIC key
+keys/public.key
+Enter directory to OUTPUT file
+file/output
+Original:[B@66d3c617
+Encrypted: [B@3339ad8e
+Choose 3 type of encryption below:
+
+(1) RSA , (2) AES , (3) Blowfish
+1
+Choose (1)encryption or (2)decryption
+2
+Enter directory to ENCRYPTED file
+file/output
+Enter directory to PRIVATE key
+keys/private.key
+Enter directory to OUTPUT file
+file/decrypted.txt
+Decrypted: [B@555590
+Choose 3 type of encryption below:
+
+(1) RSA , (2) AES , (3) Blowfish

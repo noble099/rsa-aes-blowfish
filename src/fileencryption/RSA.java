@@ -47,7 +47,7 @@ public class RSA {
   public static void generateKey(String privateKeyDir, String publicKeyDir) {
     try {
       final KeyPairGenerator keyGen = KeyPairGenerator.getInstance(ALGORITHM);
-      keyGen.initialize(1024);
+      keyGen.initialize(2048);
       final KeyPair key = keyGen.generateKeyPair();
 
       File privateKeyFile = new File(privateKeyDir);
