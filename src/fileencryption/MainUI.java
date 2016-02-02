@@ -561,12 +561,6 @@ public class MainUI extends JFrame {
             }
         });
 
-
-
-
-
-
-
         add(tab, BorderLayout.CENTER);
     }
 
