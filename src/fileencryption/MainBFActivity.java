@@ -1,18 +1,19 @@
 package fileencryption;
-import java.io.*;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static fileencryption.AES.*;
+import static fileencryption.Blowfish.*;
 
-
-public class MainAESActivity {
+public class MainBFActivity {
     private String key;
     private String inputdir;
     private String outputdir;
 
-    public MainAESActivity() {
+    public MainBFActivity() {
     }
 
     public void setOutputdir(String outputdir) {
@@ -33,7 +34,7 @@ public class MainAESActivity {
             //ENCRYPTION
             byte[] fileByte = getFileByte(inputdir);
             System.out.println("Original:" + fileByte.toString());
-            byte[] encryptedFile = encryptAES(fileByte);
+            byte[] encryptedFile = encryptBF(fileByte);
             System.out.println("Encrypted: " + encryptedFile.toString());
             FileOutputStream fos = new FileOutputStream(outputdir);
             fos.write(encryptedFile);
@@ -47,7 +48,7 @@ public class MainAESActivity {
     public void doDecryptAES(){
         try{
             byte[] fileByte1 = getFileByte(inputdir);
-            byte[] decryptedFile = decryptAES(fileByte1);
+            byte[] decryptedFile = decryptBF(fileByte1);
             System.out.println("Decrypted: " + decryptedFile.toString());
             FileOutputStream fos1 = new FileOutputStream(outputdir);
             fos1.write(decryptedFile);
@@ -70,7 +71,7 @@ public class MainAESActivity {
     }
 
 
-    private byte[] encryptAES(byte[] originalFileByte){
+    private byte[] encryptBF(byte[] originalFileByte){
         byte[] encryptedByte = null;
         try {
             byte[] cipherByte = encrypt(originalFileByte, key);
@@ -81,7 +82,7 @@ public class MainAESActivity {
         return encryptedByte;
     }
 
-    private byte[] decryptAES(byte[] cipherByte){
+    private byte[] decryptBF(byte[] cipherByte){
         byte[] decryptedByte = null;
         try {
             byte[] decipherbyte = decrypt(cipherByte, key);

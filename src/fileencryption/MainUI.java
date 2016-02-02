@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class MainUI extends JFrame {
 
-    String rsafileinputdir,rsadecryptfileinputdir, aesfileinputdir, aesdecryptfileinputdir;
+    String rsafileinputdir,rsadecryptfileinputdir, aesfileinputdir, aesdecryptfileinputdir, bffileinputdir, bfdecryptfileinputdir;
     JTabbedPane tab;
     JPanel pn1,pn2,pn3;
     JLabel rsatitle, bftitle, aestitle;
@@ -401,124 +401,166 @@ public class MainUI extends JFrame {
 
 
 
+        /////////Blowfish Panel
+        gb.fill = GridBagConstraints.HORIZONTAL;
+        gb.gridx = 0;
+        gb.gridy = 0;
+        gb.ipady = 40;
+        gb.gridwidth = 3;
+        bftitle = new JLabel("Blowfish Encryption" , SwingConstants.CENTER);
+        bftitle.setFont(new Font("Serif", Font.BOLD, 30));
+        bftitle.setForeground(Color.blue);
+        pn3.add(bftitle,gb);
 
+        gb.gridx = 0;
+        gb.gridy = 1;
+        gb.ipady = 7;
+        gb.gridwidth = 1;
+        JLabel selectFileLabelBF = new JLabel("SELECT FILE :");
+        pn3.add(selectFileLabelBF, gb);
 
+        gb.gridx = 1;
+        gb.gridy = 1;
 
-//        /////////Blowfish Panel
-//        gb.fill = GridBagConstraints.HORIZONTAL;
-//        gb.gridx = 0;
-//        gb.gridy = 0;
-//        gb.ipady = 40;
-//        gb.gridwidth = 3;
-//        bftitle = new JLabel("Blowfish Encryption" , SwingConstants.CENTER);
-//        bftitle.setFont(new Font("Serif", Font.BOLD, 30));
-//        bftitle.setForeground(Color.blue);
-//        pn3.add(bftitle,gb);
-//
-//
-//        gb.gridx = 0;
-//        gb.gridy = 1;
-//        gb.ipady = 7;
-//        gb.gridwidth = 1;
-//        selectFileLabel = new JLabel("SELECT FILE :");
-//        pn3.add(selectFileLabel, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 1;
-//        selectFileTxt = new JTextField(20);
-//        pn3.add(selectFileTxt, gb);
-//
-//        gb.gridx = 2;
-//        gb.gridy = 1;
-//        gb.weightx = 0.5;
-//        gb.ipady = 0;
-//        browseSelectFileBtn = new JButton("Browse");
-//        pn3.add(browseSelectFileBtn, gb);
-//
-//        gb.gridx = 0;
-//        gb.gridy = 2;
-//        gb.ipady = 7;
-//        selectPubKeyLabel = new JLabel("Public KEY : ");
-//        pn3.add(selectPubKeyLabel, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 2;
-//        selectPubKeyTxt = new JTextField(20);
-//        pn3.add(selectPubKeyTxt, gb);
-//
-//        gb.gridx = 0;
-//        gb.gridy = 3;
-//        newFilenameLabel = new JLabel("NEW FILENAME :");
-//        pn3.add(newFilenameLabel, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 3;
-//        newFilenameTxt = new JTextField(20);
-//        pn3.add(newFilenameTxt, gb);
-//
-//        gb.gridx = 0;
-//        gb.gridy = 4;
-//        encryptBtn = new JButton("ENCRYPT");
-//        pn3.add(encryptBtn, gb);
-//        encryptBtn.addActionListener(new ActionListener(){
-//            public void actionPerformed(ActionEvent rima){
-//                //panggil fungsi ikuuk radiobutton
-//            }
-//        });
-//
-//
-//
-//        gb.gridx = 0;
-//        gb.gridy = 5;
-//        gb.ipady = 7;
-//        gb.gridwidth = 1;
-//        selectFileLabel = new JLabel("SELECT FILE :");
-//        pn3.add(selectFileLabel, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 5;
-//        decryptselectFileTxt = new JTextField(20);
-//        pn3.add(decryptselectFileTxt, gb);
-//
-//        gb.gridx = 2;
-//        gb.gridy = 5;
-//        gb.weightx = 0.5;
-//        gb.ipady = 0;
-//        browseSelectFileBtn = new JButton("Browse");
-//        pn3.add(browseSelectFileBtn, gb);
-//
-//        gb.gridx = 0;
-//        gb.gridy = 6;
-//        gb.ipady = 7;
-//        selectPrivKeyLabel = new JLabel("Private KEY : ");
-//        pn3.add(selectPrivKeyLabel, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 6;
-//        selectPrivKeyTxt = new JTextField(20);
-//        pn3.add(selectPrivKeyTxt, gb);
-//
-//        gb.gridx = 0;
-//        gb.gridy = 7;
-//        lblNew = new JLabel("NEW FILENAME :");
-//        pn3.add(lblNew, gb);
-//
-//        gb.gridx = 1;
-//        gb.gridy = 7;
-//        decryptnewFilenameTxt = new JTextField(20);
-//        pn3.add(decryptnewFilenameTxt, gb);
-//
-//
-//        gb.gridx = 0;
-//        gb.gridy = 8;
-//        decryptBtn = new JButton("DECRYPT");
-//        pn3.add(decryptBtn, gb);
-//        decryptBtn.addActionListener(new ActionListener(){
-//            public void actionPerformed(ActionEvent rima){
-//                //panggil fungsi ikuuk radiobutton
-//            }
-//        });
-//
+        JTextField selectInputFileTxtBF = new JTextField(20);
+        pn3.add(selectInputFileTxtBF, gb);
+
+        gb.gridx = 2;
+        gb.gridy = 1;
+        gb.weightx = 0.5;
+        gb.ipady = 0;
+        JButton selectInputBrowseBtnBF = new JButton("Browse");
+        pn3.add(selectInputBrowseBtnBF, gb);
+        selectInputBrowseBtnBF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser c = new JFileChooser();
+                // Demonstrate "Open" dialog:
+                int rVal = c.showOpenDialog(MainUI.this);
+                if (rVal == JFileChooser.APPROVE_OPTION) {
+                    selectInputFileTxtBF.setText(c.getSelectedFile().getAbsolutePath());
+                    bffileinputdir = c.getCurrentDirectory().toString();
+                }
+            }
+        });
+
+        gb.gridx = 0;
+        gb.gridy = 2;
+        gb.ipady = 7;
+        JLabel keyLabelBF = new JLabel("KEY : ");
+        pn3.add(keyLabelBF, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 2;
+        JTextField keyTxtBF = new JTextField(20);
+        pn3.add(keyTxtBF, gb);
+
+        gb.gridx = 0;
+        gb.gridy = 3;
+        JLabel newFilenameLabelBF = new JLabel("NEW FILENAME :");
+        pn3.add(newFilenameLabelBF, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 3;
+        JTextField outputFileTxtBF = new JTextField(20);
+        pn3.add(outputFileTxtBF, gb);
+
+        gb.gridx = 0;
+        gb.gridy = 4;
+        JButton encryptBtnBF = new JButton("ENCRYPT");
+        pn3.add(encryptBtnBF, gb);
+        encryptBtnBF.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                MainBFActivity mbf = new MainBFActivity();
+                String fileinputdir, fileoutputdir, key;
+                fileinputdir = selectInputFileTxtBF.getText();
+                fileoutputdir = bffileinputdir+"/"+outputFileTxtBF.getText();
+                key = keyTxtBF.getText();
+                mbf.setInputdir(fileinputdir);
+                mbf.setOutputdir(fileoutputdir);
+                mbf.setKey(key);
+                mbf.doEncryptAES();
+                System.out.println(fileinputdir);
+                System.out.println(fileoutputdir);
+                System.out.println(key);
+
+            }
+        });
+
+        gb.gridx = 0;
+        gb.gridy = 5;
+        gb.ipady = 7;
+        gb.gridwidth = 1;
+        JLabel selectFileLabelBF_dec = new JLabel("SELECT FILE :");
+        pn3.add(selectFileLabelBF_dec, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 5;
+
+        JTextField selectInputFileTxtBF_dec = new JTextField(20);
+        pn3.add(selectInputFileTxtBF_dec, gb);
+
+        gb.gridx = 2;
+        gb.gridy = 5;
+        gb.weightx = 0.5;
+        gb.ipady = 0;
+        JButton selectInputBrowseBtnBF_dec = new JButton("Browse");
+        pn3.add(selectInputBrowseBtnBF_dec, gb);
+        selectInputBrowseBtnBF_dec.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser c = new JFileChooser();
+                // Demonstrate "Open" dialog:
+                int rVal = c.showOpenDialog(MainUI.this);
+                if (rVal == JFileChooser.APPROVE_OPTION) {
+                    selectInputFileTxtBF_dec.setText(c.getSelectedFile().getAbsolutePath());
+                    bfdecryptfileinputdir = c.getCurrentDirectory().toString();
+                }
+            }
+        });
+
+        gb.gridx = 0;
+        gb.gridy = 6;
+        gb.ipady = 7;
+        JLabel keyLabelBF_dec = new JLabel("KEY : ");
+        pn3.add(keyLabelBF_dec, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 6;
+        JTextField keyTxtBF_dec = new JTextField(20);
+        pn3.add(keyTxtBF_dec, gb);
+
+        gb.gridx = 0;
+        gb.gridy = 7;
+        JLabel newFilenameLabelBF_dec = new JLabel("NEW FILENAME :");
+        pn3.add(newFilenameLabelBF_dec, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 7;
+        JTextField outputFileTxtBF_dec = new JTextField(20);
+        pn3.add(outputFileTxtBF_dec, gb);
+
+        gb.gridx = 0;
+        gb.gridy = 8;
+        JButton encryptBtnBF_dec = new JButton("DECRYPT");
+        pn3.add(encryptBtnBF_dec, gb);
+        encryptBtnBF_dec.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                MainBFActivity mbf = new MainBFActivity();
+                String fileinputdir, fileoutputdir, key;
+                fileinputdir = selectInputFileTxtBF_dec.getText();
+                fileoutputdir = bfdecryptfileinputdir+"/"+outputFileTxtBF_dec.getText();
+                key = keyTxtBF_dec.getText();
+                mbf.setInputdir(fileinputdir);
+                mbf.setOutputdir(fileoutputdir);
+                mbf.setKey(key);
+                mbf.doDecryptAES();
+                System.out.println(fileinputdir);
+                System.out.println(fileoutputdir);
+                System.out.println(key);
+            }
+        });
+
 
 
 
