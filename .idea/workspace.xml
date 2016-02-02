@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b70b9b0-7a6c-4c7d-b289-4ebe11a50f04" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fileencryption/AES.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fileencryption/MainAESActivity.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainPane$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainPane$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainPane$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainPane$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainPane.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$1.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$2.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$3.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$4.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$5.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$6.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/AES.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/AES.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainAESActivity.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainAESActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$8.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$9.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI.class" afterPath="$PROJECT_DIR$/out/production/FileEncryption/fileencryption/MainUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fileencryption/AES.java" afterPath="$PROJECT_DIR$/src/fileencryption/AES.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fileencryption/MainAESActivity.java" afterPath="$PROJECT_DIR$/src/fileencryption/MainAESActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fileencryption/MainUI.java" afterPath="$PROJECT_DIR$/src/fileencryption/MainUI.java" />
     </list>
     <ignored path="FileEncryption.iws" />
@@ -43,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/fileencryption/MainRSAActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="76" selection-end-column="5" />
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,25 +48,25 @@
         <entry file="file://$PROJECT_DIR$/src/fileencryption/MainAESActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
-                <element signature="e#596#597#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#635#636#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AES.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AES.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fileencryption/AES.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6168831">
-              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+            <state vertical-scroll-proportion="-8.333333">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fileencryption/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.0804596">
+              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,9 +129,9 @@
         <option value="$PROJECT_DIR$/src/fileencryption/MainPane.java" />
         <option value="$PROJECT_DIR$/src/fileencryption/RSA.java" />
         <option value="$PROJECT_DIR$/src/fileencryption/MainRSAActivity.java" />
+        <option value="$PROJECT_DIR$/src/fileencryption/AES.java" />
         <option value="$PROJECT_DIR$/src/fileencryption/MainAESActivity.java" />
         <option value="$PROJECT_DIR$/src/fileencryption/MainUI.java" />
-        <option value="$PROJECT_DIR$/src/fileencryption/AES.java" />
       </list>
     </option>
   </component>
@@ -171,8 +164,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,7 +247,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,7 +260,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AES">
+  <component name="RunManager" selected="Application.MainUI">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -633,8 +626,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.AES" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MainUI" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MainUI" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AES" />
         <item index="2" class="java.lang.String" itemvalue="Application.MainPane" />
         <item index="3" class="java.lang.String" itemvalue="Application.TabbedPaneDemo" />
         <item index="4" class="java.lang.String" itemvalue="Application.Main" />
@@ -662,7 +655,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.503231" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2180937" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -679,6 +672,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -691,6 +692,62 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainRSAActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainAESActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/AES.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/RSA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="22" selection-start-line="69" selection-start-column="4" selection-end-line="79" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fileencryption/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -803,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainRSAActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/src.zip!/javax/swing/JButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324138">
@@ -824,26 +871,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainAESActivity.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="1785" column="0" selection-start-line="1785" selection-start-column="0" selection-end-line="1785" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainRSAActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/AES.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.333333">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -860,10 +909,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileencryption/AES.java">
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainAESActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6168831">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileencryption/MainUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0804596">
+          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

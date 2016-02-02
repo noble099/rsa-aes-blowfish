@@ -317,9 +317,9 @@ public class MainUI extends JFrame {
                 maes.setOutputdir(fileoutputdir);
                 maes.setKey(key);
                 maes.doEncryptAES();
-//                System.out.println(fileinputdir);
-//                System.out.println(fileoutputdir);
-//                System.out.println(key);
+                System.out.println(fileinputdir);
+                System.out.println(fileoutputdir);
+                System.out.println(key);
 
             }
         });
@@ -343,6 +343,18 @@ public class MainUI extends JFrame {
         gb.ipady = 0;
         JButton selectInputBrowseBtnAES_dec = new JButton("Browse");
         pn2.add(selectInputBrowseBtnAES_dec, gb);
+        selectInputBrowseBtnAES_dec.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser c = new JFileChooser();
+                // Demonstrate "Open" dialog:
+                int rVal = c.showOpenDialog(MainUI.this);
+                if (rVal == JFileChooser.APPROVE_OPTION) {
+                    selectInputFileTxtAES_dec.setText(c.getSelectedFile().getAbsolutePath());
+                    aesdecryptfileinputdir = c.getCurrentDirectory().toString();
+                }
+            }
+        });
 
         gb.gridx = 0;
         gb.gridy = 6;
@@ -369,9 +381,20 @@ public class MainUI extends JFrame {
         gb.gridy = 8;
         JButton encryptBtnAES_dec = new JButton("DECRYPT");
         pn2.add(encryptBtnAES_dec, gb);
-        encryptBtnAES.addActionListener(new ActionListener(){
+        encryptBtnAES_dec.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                //panggil fungsi ikuuk radiobutton
+                MainAESActivity maes = new MainAESActivity();
+                String fileinputdir, fileoutputdir, key;
+                fileinputdir = selectInputFileTxtAES_dec.getText();
+                fileoutputdir = aesdecryptfileinputdir+"/"+outputFileTxtAES_dec.getText();
+                key = keyTxtAES_dec.getText();
+                maes.setInputdir(fileinputdir);
+                maes.setOutputdir(fileoutputdir);
+                maes.setKey(key);
+                maes.doDecryptAES();
+                System.out.println(fileinputdir);
+                System.out.println(fileoutputdir);
+                System.out.println(key);
             }
         });
 

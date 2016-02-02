@@ -11,7 +11,6 @@ import static fileencryption.AES.*;
  * Created by megasap on 2/1/16.
  */
 public class MainAESActivity {
-
     private String key;
     private String inputdir;
     private String outputdir;
@@ -77,7 +76,7 @@ public class MainAESActivity {
     private byte[] encryptAES(byte[] originalFileByte){
         byte[] encryptedByte = null;
         try {
-            final byte[] cipherByte = encrypt(originalFileByte, key);
+            byte[] cipherByte = encrypt(originalFileByte, key);
             encryptedByte = cipherByte;
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,7 +87,7 @@ public class MainAESActivity {
     private byte[] decryptAES(byte[] cipherByte){
         byte[] decryptedByte = null;
         try {
-            final byte[] decipherbyte = decrypt(cipherByte, key);
+            byte[] decipherbyte = decrypt(cipherByte, key);
             decryptedByte = decipherbyte;
         } catch (Exception e) {
             e.printStackTrace();
