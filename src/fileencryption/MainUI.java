@@ -204,7 +204,7 @@ public class MainUI extends JFrame {
         gb.gridx = 0;
         gb.gridy = 7;
         JLabel rsanewFilenameLabelAES_dec = new JLabel("NEW FILENAME :");
-        pn1.add(rsanewFilenameLabel, gb);
+        pn1.add(rsanewFilenameLabelAES_dec, gb);
 
         gb.gridx = 1;
         gb.gridy = 7;
@@ -229,6 +229,54 @@ public class MainUI extends JFrame {
                 rsaActivity.doDecryptRSA();
                 System.out.println(fileinputdir);
                 System.out.println(fileoutputdir);
+                System.out.println(privkeydir);
+            }
+        });
+
+        gb.gridx = 0;
+        gb.gridy = 9;
+        gb.ipady = 7;
+        JLabel rsakeydirLabel = new JLabel("Key : ");
+        pn1.add(rsakeydirLabel, gb);
+
+        gb.gridx = 1;
+        gb.gridy = 9;
+        JTextField keydirTxtRSA = new JTextField(20);
+        pn1.add(keydirTxtRSA, gb);
+
+        gb.gridx = 2;
+        gb.gridy = 9;
+        gb.weightx = 0.5;
+        gb.ipady = 0;
+        JButton selectkeydirBrowseBtnRSA = new JButton("Browse");
+        pn1.add(selectkeydirBrowseBtnRSA, gb);
+        selectkeydirBrowseBtnRSA.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser c = new JFileChooser();
+                c.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                // Demonstrate "Open" dialog:
+                int rVal = c.showOpenDialog(MainUI.this);
+                if (rVal == JFileChooser.APPROVE_OPTION) {
+                    keydirTxtRSA.setText(c.getSelectedFile().getAbsolutePath());
+                }
+            }
+        });
+
+        gb.gridx = 0;
+        gb.gridy = 10;
+        JButton genkeyBtnRSA = new JButton("GENERATE KEY");
+        pn1.add(genkeyBtnRSA, gb);
+        genkeyBtnRSA.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                String pubkeydir, privkeydir;
+                pubkeydir = keydirTxtRSA.getText() + "/pub.key";
+                privkeydir = keydirTxtRSA.getText() + "/priv.key";
+                MainRSAActivity rsaActivity = new MainRSAActivity();
+               rsaActivity.setPubkeydir(pubkeydir);
+                rsaActivity.setPrivkeydir(privkeydir);
+                rsaActivity.doGenerateKey();
+                System.out.println(pubkeydir);
                 System.out.println(privkeydir);
             }
         });
