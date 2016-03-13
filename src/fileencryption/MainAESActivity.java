@@ -1,4 +1,5 @@
 package fileencryption;
+import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,8 +39,10 @@ public class MainAESActivity {
             FileOutputStream fos = new FileOutputStream(outputdir);
             fos.write(encryptedFile);
             fos.close();
+            JOptionPane.showMessageDialog(null, "AES Encryption Success");
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "AES Encryption Error");
         }
     }
 
@@ -52,8 +55,10 @@ public class MainAESActivity {
             FileOutputStream fos1 = new FileOutputStream(outputdir);
             fos1.write(decryptedFile);
             fos1.close();
+            JOptionPane.showMessageDialog(null, "AES Decryption Success");
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "AES Decryption Error");
         }
     }
 

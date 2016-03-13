@@ -1,6 +1,7 @@
 
 package fileencryption;
 
+import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,6 +47,7 @@ public class MainRSAActivity {
 
     public void doGenerateKey(){
         generateKey(privkeydir, pubkeydir);
+
     }
 
     public void doEncryptRSA(){
@@ -58,8 +60,10 @@ public class MainRSAActivity {
             FileOutputStream fos = new FileOutputStream(outputdir);
             fos.write(encryptedFile);
             fos.close();
+            JOptionPane.showMessageDialog(null, "RSA Encryption Success");
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "RSA Encryption Error");
         }
     }
 
@@ -71,8 +75,10 @@ public class MainRSAActivity {
             FileOutputStream fos1 = new FileOutputStream(outputdir);
             fos1.write(decryptedFile);
             fos1.close();
+            JOptionPane.showMessageDialog(null, "RSA Decryption Success");
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "RSA Decryption Error");
         }
     }
 

@@ -9,6 +9,7 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 
 import javax.crypto.Cipher;
+import javax.swing.*;
 
 
 public class RSA {
@@ -46,8 +47,10 @@ public class RSA {
           new FileOutputStream(privateKeyFile));
       privateKeyOS.writeObject(key.getPrivate());
       privateKeyOS.close();
+      JOptionPane.showMessageDialog(null, "Generate key success \nPublic key : " + publicKeyDir + "\n" + "Private key : " + privateKeyDir);
     } catch (Exception e) {
       e.printStackTrace();
+      JOptionPane.showMessageDialog(null, "Generate keys ERROR");
     }
 
   }

@@ -1,5 +1,6 @@
 package fileencryption;
 
+import javax.swing.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,7 +30,7 @@ public class MainBFActivity {
     }
 
 
-    public void doEncryptAES(){
+    public void doEncryptBFA(){
         try {
             //ENCRYPTION
             byte[] fileByte = getFileByte(inputdir);
@@ -39,13 +40,18 @@ public class MainBFActivity {
             FileOutputStream fos = new FileOutputStream(outputdir);
             fos.write(encryptedFile);
             fos.close();
+            JOptionPane.showMessageDialog(null, "Blowfish Encryption Success");
         }catch(Exception e){
+            //e.printStackTrace();
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Blowfish Encryption Error");
         }
     }
 
 
-    public void doDecryptAES(){
+
+
+    public void doDecryptBFA(){
         try{
             byte[] fileByte1 = getFileByte(inputdir);
             byte[] decryptedFile = decryptBF(fileByte1);
@@ -53,8 +59,10 @@ public class MainBFActivity {
             FileOutputStream fos1 = new FileOutputStream(outputdir);
             fos1.write(decryptedFile);
             fos1.close();
+            JOptionPane.showMessageDialog(null, "Blowfish Decryption Success");
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Blowfish Decryption Error");
         }
     }
 
